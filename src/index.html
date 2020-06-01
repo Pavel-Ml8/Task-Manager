@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/images/icons/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Task Manager</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="task-manager">
+
+        <h1 class="task-manager__title">Task Manager</h1>
+
+        <!-- ______________________________ TASKS CONFIGS _______________________________________ -->
+        <div class="task-manager__configs task-configs">
+            <div class="task-add task-configs__item">
+                <button class="task-add__btn-new main-btn main-btn_config">
+                    <span class="task-configs__btn-title">Add new</span>
+                    <i class="icon icon-add task-configs__btn-icon"></i>
+                </button>
+
+                <div class="task-add__content dropdown-config">
+                    <button class="dropdown-config__close-btn clear-btn"><i class="icon icon-close"></i></button>
+
+                    <div class="task-add__input-container">
+                        <div class="task-add__input-box">
+                            <input id="newTaskTitle" type="text" class="task-add__input"
+                                   placeholder="Write the name of your task here" value="">
+                            <label for="newTaskTitle" class="task-add__input-label">
+                                <span class="task-add__input-title task-add__input-title_name">Title</span>
+                            </label>
+                        </div>
+
+                        <div class=" task-add__input-box">
+                            <input id="newTaskDesc" type="text" class="task-add__input"
+                                   placeholder="Write the description of your task here" value="">
+                            <label for="newTaskDesc" class="task-add__input-label">
+                                <span class="task-add__input-title task-add__input-title_desc">Description</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="task-add__btn-add main-btn main-btn_config-make">
+                        Add <i class="icon icon-add"></i>
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="task-search task-configs__item">
+                <button class="task-search__btn-open main-btn main-btn_config">
+                    <span class="task-configs__btn-title">Search</span>
+                    <i class="icon icon-search task-configs__btn-icon"></i>
+                </button>
+
+                <div class="task-search__content dropdown-config">
+                    <button class="dropdown-config__close-btn clear-btn"><i class="icon icon-close"></i></button>
+                    <div class="task-search__input-box">
+                        <input list="taskSearchList" type="text" class="task-search__input taskSearchField"
+                               placeholder="Search by title">
+                        <datalist id="taskSearchList"></datalist>
+                        <i class="icon icon-del clearSearchFieldBtn"></i>
+                    </div>
+                    <button class="task-search__btn-search main-btn main-btn_config-make taskSearchBtn">
+                        Search <i class="icon icon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- _____________________________ TASKS BULK ACTIONS _____________________________________ -->
+        <div class="task-manager__actions task-actions">
+            <div class="task-actions__item action">
+                <p class="action__title">Bulk Actions</p>
+                <ul class="task-actions__content action__content">
+                    <li class="action__item">
+                        <button class="action__btn hold-all">Hold</button>
+                    </li>
+                    <li class="action__item">
+                        <button class="action__btn unhold-all">Unhold</button>
+                    </li>
+                    <li class="action__item">
+                        <button class="action__btn done-all">Mark as done</button>
+                    </li>
+                    <li class="action__item">
+                        <button class="action__btn action__btn_danger remove-all">Remove</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="task-actions__item action">
+                <p class="action__title">Sort</p>
+                <ul class="task-actions__content action__content">
+                    <li class="action__item">
+                        <button class="action__btn sort-status">By status</button>
+                    </li>
+                    <li class="action__item">
+                        <button class="action__btn sort-title">By title</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- _________________________________ TASKS CONTAINER __________________________________ -->
+        <div class="task-manager__content">
+            <div class="preloader">
+                <div class="preloader__row">
+                    <div class="preloader__item"></div>
+                    <div class="preloader__item"></div>
+                </div>
+            </div>
+
+            <div class="task-container"></div>
+
+            <div class="task-manager__optional-desc optional-desc">
+                Your task list is empty yet... Try to add new task!
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="./scripts/main.js"></script>
+</body>
+</html>
